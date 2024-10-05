@@ -9,8 +9,9 @@ import authRoutes from "./routes/auth.routes.js"
 import messageRoutes from "./routes/message.routes.js"
 import userRoutes from "./routes/user.routes.js"
 import connectToMongoDb from './db/connectToMongoDb.js';
+import { app,server } from './socket/socket.js';
 
-const app = express();
+
 const PORT = process.env.PORT || 8000;
 
 
@@ -38,7 +39,7 @@ app.get("/",(req,res)=>{
 })
 
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
     connectToMongoDb();
     console.log(`Server listening on port ${PORT}`)
 })
