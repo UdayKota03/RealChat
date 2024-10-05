@@ -16,7 +16,7 @@ export const SocketContextProvider = ({children}) => {
 
     useEffect(() => {
 		if (authUser) {
-			const socket = io(`${process.env.REACT_APP_BACK_URL}`,{
+			const socket = io(`https://realchat-ey8v.onrender.com`,{
                 query:{
                     userId: authUser._id,
                 },
