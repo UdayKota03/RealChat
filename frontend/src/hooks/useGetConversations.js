@@ -11,7 +11,7 @@ const useGetConversations = () => {
 		const getConversations = async () => {
 			setLoading(true);
 			try {
-				const res = await axios(`${process.env.BACK_URL}/api/users` , {
+				const res = await axios(`${process.env.REACT_APP_BACK_URL}/api/users` , {
 					headers:{
 						authorization : localStorage.getItem("jwt")
 					}

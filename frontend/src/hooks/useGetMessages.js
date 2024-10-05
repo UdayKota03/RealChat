@@ -10,7 +10,7 @@ const useGetMessages = () => {
 		const getMessages = async () => {
 			setLoading(true);
 			try {
-				const res = await fetch(`${process.env.BACK_URL}/api/messages/${selectedConversation._id}`,{
+				const res = await fetch(`${process.env.REACT_APP_BACK_URL}/api/messages/${selectedConversation._id}`,{
                     headers: {
                         authorization: localStorage.getItem("jwt"),
                     }
