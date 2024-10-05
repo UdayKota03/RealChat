@@ -9,11 +9,7 @@ const useLogout = () => {
 	const logout = async () => {
 		setLoading(true);
 		try {
-<<<<<<< HEAD
-			const res = await fetch(`${process.env.REACT_APP_BACK_URL}/api/auth/logout`, {
-=======
 			const res = await fetch("/api/auth/logout", {
->>>>>>> parent of ee8b12e (axios links updated)
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 			});

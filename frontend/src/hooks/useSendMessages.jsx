@@ -10,11 +10,7 @@ const useSendMessage = () => {
     setLoading(true);
     try {
       const res = await fetch(
-<<<<<<< HEAD:frontend/src/hooks/useSendMessages.js
-        `${process.env.REACT_APP_BACK_URL}/api/messages/send/${selectedConversation._id}`,
-=======
         `/api/messages/send/${selectedConversation._id}`,
->>>>>>> parent of ee8b12e (axios links updated):frontend/src/hooks/useSendMessages.jsx
         {
           method: "POST",
           headers: {
