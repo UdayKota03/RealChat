@@ -37,7 +37,10 @@ app.get("*", (req, res) => {
 });
 
 
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:3000', // Your frontend origin
+    credentials: true, // Allow cookies to be sent
+}));
 
 // app.get("/",(req,res)=>{
 //     res.send("hello")

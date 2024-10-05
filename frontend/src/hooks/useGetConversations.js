@@ -11,7 +11,11 @@ const useGetConversations = () => {
 		const getConversations = async () => {
 			setLoading(true);
 			try {
+<<<<<<< HEAD
 				const res = await axios(`${process.env.REACT_APP_BACK_URL}/api/users` , {
+=======
+				const res = await axios("http://localhost:8000/api/users" , {
+>>>>>>> parent of ee8b12e (axios links updated)
 					headers:{
 						authorization : localStorage.getItem("jwt")
 					}
