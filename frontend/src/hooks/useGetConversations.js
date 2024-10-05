@@ -11,7 +11,7 @@ const useGetConversations = () => {
 		const getConversations = async () => {
 			setLoading(true);
 			try {
-				const res = await axios("http://localhost:8000/api/users" , {
+				const res = await axios("https://realchat-ey8v.onrender.com/api/users" , {
 					headers:{
 						authorization : localStorage.getItem("jwt")
 					}
