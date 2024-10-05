@@ -12,7 +12,7 @@ const useSignup = () => {
 
 		setLoading(true);
 		try {
-			const res = await fetch("https://realchat-ey8v.onrender.com/api/auth/signup", {
+			const res = await fetch(`${process.env.BACK_URL}/api/auth/signup`, {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ fullName, username, password, confirmPassword, gender }),
@@ -27,6 +27,7 @@ const useSignup = () => {
             //local storage
             //context
             localStorage.setItem("chat-user", JSON.stringify(data));
+			localStorage.setItem("jwt", data.token);
 			setAuthUser(data);
 		} catch (error) {
 			console.log("Failed");

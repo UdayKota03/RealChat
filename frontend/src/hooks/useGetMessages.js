@@ -10,7 +10,7 @@ const useGetMessages = () => {
 		const getMessages = async () => {
 			setLoading(true);
 			try {
-				const res = await fetch(`https://realchat-ey8v.onrender.com/api/messages/${selectedConversation._id}`,{
+				const res = await fetch(`${process.env.BACK_URL}/api/messages/${selectedConversation._id}`,{
                     headers: {
                         authorization: localStorage.getItem("jwt"),
                     }
