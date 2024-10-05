@@ -11,15 +11,19 @@ const useListenMessages = () => {
 
 	useEffect(() => {
 		socket?.on("newMessage", (newMessage) => {
-			if (selectedConversation?.participants.includes(newMessage.senderId) || selectedConversation?.participants.includes(newMessage.receiverId)) {
-				newMessage.shouldShake = true;
-				const sound = new Audio(notificationSound);
-				sound.play();
-				setMessages([...messages, newMessage]);
-			}
+		  // Check if the new message belongs to the selected conversation
+		  if (
+			newMessage.senderId === selectedConversation?._id || 
+			newMessage.receiverId === selectedConversation?._id
+		  ) {
+			newMessage.shouldShake = true;
+			const sound = new Audio(notificationSound);
+			sound.play();
+			setMessages([...messages, newMessage]);
+		  }
 		});
-
+	
 		return () => socket?.off("newMessage");
-	}, [socket, setMessages, messages,selectedConversation]);
-};
+	  }, [socket, setMessages, messages, selectedConversation?._id]);
+	};
 export default useListenMessages;
